@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Resume Style.css"/>
+    <title>My Resume</title>
+</head>
+
+
+<body>
+    <h1>Online Resume</h1>
+    <h2>Luvuyo Tshangela</h2>
+    <hr>
+    
+    
+    <!--put picture here or try at the bottom of info-->
+    <div id="id_photo"><img src="/Assets/images/DSC_0004.JPG">
+    </div>
+
+    <!--objective statement-->
+    <div class="content">
+    <h3>Objective Statement</h3>
+    <p>
+    To secure an entry level web developer position where i can apply my strong technical knowledge and
+    problem-solving skills to contribute to the development and maintenance of innovative web applications.
+    I am eager to learn and grow in collaborative enviroment, while leveraging my creativity and attention
+    to deatil to deliver high-quality web solutions that exceed client expectations.
+    </p>
+    <!--education-->
+    <h3>Education<h3>
+        <ul>
+        <li><div class="qualification">BSc Physics Extended programme, University of Pretoria (2020) </div></li>
+        <li><div class="qualification">BSc Physics, University of Pretoria (2021-current) </div>
+            <div class="UP_subjects">Major:Physics Minor:Astronomy</div>
+        </li>
+        </ul>
+    
+    
+    <!--work xp-->
+    <h3>Work Experience</h3>
+        <ul>None</ul>
+    <!--skills-->
+    <h3>Skills<h3>
+        <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+        <li>Data Visualisation</li>
+        <li>writing</li>
+        <li>critical thinking</li>
+        <li>microsoft excel</li>
+        </ol>
+
+    <!--awards-->
+    </div>
+    
+    
+    
+    <!--put anchor tags to pages for hobbies-->
+    <div class="links">
+    <a href="./public/Hobbies.html">hobbies</a>
+
+    <!--put anchor tags to pages for contacts-->
+    <a href="./public/Contact.html">contact</a>
+    </div>
+    <!--add a footer tag-->
+    <footer>
+        <p>© Luvuyo Tshangela</p>
+    </footer>
+</body>
+</html>

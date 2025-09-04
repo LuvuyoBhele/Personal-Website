@@ -5,14 +5,13 @@ body {
 
 footer {
     text-align: center;
-    padding: 1em;
     font-size: 1em;
     background-color: #D3F5E4;
     color: black;
     position: relative;
     bottom: 0;
-    width: 100%;
-    margin-top: 20px;
+    width: 100vw;
+    margin-top: 20px;;
 }
 
 #motto_text {
@@ -180,6 +179,7 @@ footer {
     */
     .card{
         width:fit-content;
+        margin-bottom: 1em;
     }
 
     .card-text-container{
@@ -214,5 +214,9 @@ footer {
         height: 200px;/*why use a height?*/
         object-fit: cover;
         border-radius: 10px;
+    }
+
+    footer{
+        margin-top: 100px;
     }
 }

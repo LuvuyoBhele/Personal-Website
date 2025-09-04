@@ -1,0 +1,177 @@
+/*here we design for small cell phones*/ 
+
+p, h1, h2{
+       color: #D3F5E4;
+    }
+
+h1, h2{
+    margin-left: 1em;
+}
+
+.articleBtn{
+    color:#1A0381;
+    background-color: #D3F5E4;
+    border-color: #B81028;
+}
+
+
+
+@media screen and (max-width: 578px){
+    body {
+    background-color:#185737;
+    }
+    
+    
+    #project1{
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+    }
+
+    .captionContainer p{
+       text-align: center;
+       color: #D3F5E4;
+        
+    }
+
+    #cosmicWeb{ /*this is the styling of the container of first image and caption*/ 
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        /*margin-right: 0.8em;*/
+        margin-top: 1em;
+        /*margin-left: 1em;*/
+        aspect-ratio: 1 / 0.8;
+        min-width: 100px;
+        margin-left: 0.4em;
+    }
+
+    #cosmicWebImage{
+        width: fit-content;
+        aspect-ratio: 1 / 1;
+
+    }
+
+    .caption{
+        font-size: 1.3em;
+        font-weight: bold;
+        /*padding: 0%;*/
+        margin-bottom: 0.3em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .articleDescription, .articleBtn{
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-right: 2em;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width:769px){
+     body {
+    background-color:#185737;
+    }
+    
+    #project1{
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+    }
+
+    .captionContainer p{
+       text-align: center;
+        
+    }
+
+    #cosmicWeb{ /*this is the styling of the container of first image and caption*/ 
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        /*margin-right: 0.8em;*/
+        margin-top: 1em;
+        /*margin-left: 1em;*/
+        aspect-ratio: 1 / 0.8;
+        min-width: 100px;
+        margin-left: 0.4em;
+    }
+
+    #cosmicWebImage{
+        width: fit-content;
+        aspect-ratio: 1 / 1;
+
+    }
+
+    .caption{
+        font-size: 1.3em;
+        font-weight: bold;
+        /*padding: 0%;*/
+        margin-bottom: 0.3em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .articleDescription, .articleBtn{
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-right: 2em;
+    }
+}
+
+@media screen and (min-width:770px) {
+     body {
+    background-color:#185737;
+    }
+    
+    #project1{
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+    }
+
+    .captionContainer p{
+       text-align: center;
+        
+    }
+
+    #cosmicWeb{ /*this is the styling of the container of first image and caption*/ 
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        /*margin-right: 0.8em;*/
+        margin-top: 0.3em;
+        /*margin-left: 1em;*/
+        aspect-ratio: 1 / 0.8;
+        min-width: 100px;
+        margin-left: 0.4em;
+    }
+
+    #cosmicWebImage{
+        width: fit-content;
+        aspect-ratio: 1 / 1;
+
+    }
+
+    .caption{
+        font-size: 1.3em;
+        font-weight: bold;
+        /*padding: 0%;*/
+        margin-bottom: 0.3em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .articleDescription, .articleBtn{
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-right: 2em;
+    }
+    
+
+    .articleDescription{
+        margin-bottom: 10px;
+    }
+}

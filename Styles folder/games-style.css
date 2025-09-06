@@ -1,0 +1,14 @@
+body {
+    background-color:black;
+}
+
+footer {
+    text-align: center;
+    font-size: 1em;
+    background-color: #D3F5E4;
+    color: black;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 20px;;
+}

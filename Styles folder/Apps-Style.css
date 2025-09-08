@@ -18,7 +18,8 @@ h1, h2{
 .col-8 {
     /*this forces main content to not overlap with the fixed menu*/
   max-width: 75% !important;
-  margin-left: 25% !important;
+  margin-right: 25% !important; /* push main content away from right menu */
+  margin-left: 0 !important;
 }
 
 /*
@@ -38,6 +39,7 @@ h1, h2{
   color: #1A0381 !important;
   background-color: #D3F5E4 !important;
   border-color: #B81028 !important;
+  box-shadow: 0 0 12px 4px #24E3C3;
 }
 
 .list-group-item {
@@ -80,6 +82,17 @@ footer {
 }
 
 
+
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background: inherit;
+    z-index: 1000;
+    padding-top: 7px;
+}
 
 /*
 @media screen and (max-width: 578px){

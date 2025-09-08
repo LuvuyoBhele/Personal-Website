@@ -10,7 +10,13 @@ h1, h2{
     margin-left: 1em;
 }
 
+.col-4 {
+    flex: 0 0 auto  !important;
+    width: max-content  !important;
+}
+
 .col-8 {
+    /*this forces main content to not overlap with the fixed menu*/
   max-width: 75% !important;
   margin-left: 25% !important;
 }
@@ -73,13 +79,19 @@ footer {
     margin-top: 20px;;
 }
 
-.fixed-menu {
-  position: fixed  !important;
-  
- 
 
-  width: 25% !important;
-  height: 100vh !important;
-  
-  transition: all 0.3s ease-in-out !important;  /* Smooth interaction */
+
+@media screen and (max-width: 578px){
+    .fixed-menu {
+    position: fixed  !important;
+    width: 25% !important;
+    height: 100vh !important;
+    transition: all 0.3s ease-in-out !important;  /* Smooth interaction */
+    }
+
+    .col-4 {
+    flex: 0 0 auto  !important;
+    width: max-content  !important;
+}
+
 }

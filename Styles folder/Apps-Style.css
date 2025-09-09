@@ -92,3 +92,14 @@ footer {
   transition: all 0.3s ease-in-out !important;  /* Smooth interaction */
   z-index: 1000;
   }
+
+.col-4.fixed-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 25% !important;
+    height: 100% !important;
+    background: inherit !important;
+    z-index: 1000 !important;
+    padding-top: 7px !important;
+}

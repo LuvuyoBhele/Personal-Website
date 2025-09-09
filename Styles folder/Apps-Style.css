@@ -16,10 +16,11 @@ h1, h2{
 }
 
 .col-8 {
-    /*this forces main content to not overlap with the fixed menu*/
+  /*this forces main content to not overlap with the fixed menu*/
   max-width: 75% !important;
   margin-right: 25% !important; /* push main content away from right menu */
   margin-left: 0 !important;
+
 }
 
 
@@ -85,7 +86,7 @@ footer {
 
 
 
-  .fixed-menu {
+.fixed-menu {
   position: fixed  !important;
   width: 25% !important;
   height: 100% !important;
@@ -96,7 +97,7 @@ footer {
 .col-4.fixed-menu {
     position: fixed !important;
     top: 0 !important;
-    right: 0 !important;
+    right: 20px !important;
     width: 25% !important;
     height: 100% !important;
     background: inherit !important;

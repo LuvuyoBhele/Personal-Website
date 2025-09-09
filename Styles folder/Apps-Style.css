@@ -19,8 +19,7 @@ h1, h2{
   /*this forces main content to not overlap with the fixed menu*/
   max-width: 75% !important;
   margin-right: 25% !important; /* push main content away from right menu */
-  margin-left: 0 !important;
-
+  margin-left: 10px !important;
 }
 
 

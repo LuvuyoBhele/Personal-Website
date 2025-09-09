@@ -22,7 +22,7 @@ h1, h2{
   margin-left: 0 !important;
 }
 
-/*
+
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #C0EAD4;
@@ -34,7 +34,7 @@ h1, h2{
     color:#1A0381 !important; 
     background-color: #24E3C3 !important;
 }
-*/
+
 .list-group-item.active {
   color: #1A0381 !important;
   background-color: #D3F5E4 !important;

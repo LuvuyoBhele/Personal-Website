@@ -83,16 +83,6 @@ footer {
 
 
 
-.fixed-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
-    background: inherit;
-    z-index: 1000;
-    padding-top: 7px;
-}
 
 /*
 @media screen and (max-width: 578px){

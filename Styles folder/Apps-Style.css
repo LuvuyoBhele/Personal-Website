@@ -95,12 +95,15 @@ footer {
   }
 
 .col-4.fixed-menu {
-    position: fixed !important;
-    top: 0 !important;
-    right: 20px !important;
-    width: 25% !important;
-    height: 100% !important;
-    background: inherit !important;
-    z-index: 1000 !important;
-    padding-top: 7px !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 20px !important;
+  width: 35% !important;
+  height: 100% !important;
+  background: inherit !important;
+  z-index: 1000 !important;
+  padding-top: 7px !important;
+  box-sizing: border-box !important;
+  overflow: auto !important;   /* prevents overflow */
+  
 }

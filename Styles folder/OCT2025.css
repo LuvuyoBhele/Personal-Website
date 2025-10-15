@@ -11,9 +11,7 @@ p{
     color: #FDEB9E;
     font-size: 5 em;
     font-weight: large;
-    font-style: italic;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px rgb(11, 67, 135);
+    letter-spacing: 0.5em;
 }
 
 #intro_text h2{
@@ -21,7 +19,8 @@ p{
     font-size: 3 em;
     font-weight: lighter;
     font-style: italic;
-    letter-spacing: 2px;
+    word-wrap: wrap;
+    word-spacing: 0.5em;
     text-shadow: 2px 2px rgb(11, 67, 135);
 }
 

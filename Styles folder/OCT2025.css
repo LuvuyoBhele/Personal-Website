@@ -7,9 +7,18 @@ p{
     color: #D3F5E4;
 }
 
-#intro_text h1, #intro_text h2{
+#intro_text h1{
     color: #6ac332;
     font-size: x-large;
+    font-weight: large;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px rgb(11, 67, 135);
+}
+
+#intro_text h2{
+    color: #6ac332;
+    font-size: medium;
     font-weight: large;
     font-style: italic;
     letter-spacing: 2px;

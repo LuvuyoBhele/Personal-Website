@@ -9,7 +9,7 @@ p{
 
 #intro_text h1{
     color: #FDEB9E;
-    font-size: x-large;
+    font-size: 5 em;
     font-weight: large;
     font-style: italic;
     letter-spacing: 2px;
@@ -18,7 +18,7 @@ p{
 
 #intro_text h2{
     color: #FDEB9E;
-    font-size: medium;
+    font-size: 3 em;
     font-weight: large;
     font-style: italic;
     letter-spacing: 2px;

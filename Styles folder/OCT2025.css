@@ -8,7 +8,7 @@ p{
 }
 
 #intro_text h1{
-    color: #6ac332;
+    color: #FDEB9E;
     font-size: x-large;
     font-weight: large;
     font-style: italic;
@@ -17,7 +17,7 @@ p{
 }
 
 #intro_text h2{
-    color: #6ac332;
+    color: #FDEB9E;
     font-size: medium;
     font-weight: large;
     font-style: italic;
@@ -54,8 +54,9 @@ img,.card-text-container, .card-title, #motto_text{
 
 button{
     font-family:Arial, Helvetica, sans-serif;
-    background-color:rgb(11, 67, 135);
-    color: #6ac332;
+    font-weight: medium;
+    background-color:#003161;
+    color: #FDEB9E;
     height: 30px;
     border-radius: 30px;
     /*box-shadow: 0 8px 16px 0 rgb(0,0,0,0,0.6);*/

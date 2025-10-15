@@ -1,0 +1,91 @@
+body {
+    background-image: url(../Assets/images/8287aba6d918a82b5bfab5ec2aa43210.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+} 
+
+p{
+    color: #D3F5E4;
+}
+
+#intro_text h1, #intro_text h2{
+    color: #6ac332;
+    font-size: x-large;
+    font-weight: large;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px rgb(11, 67, 135);
+}
+
+h5{
+    margin: 0%;
+}
+
+img,.card-text-container, .card-title, #motto_text{
+    display: none;
+}
+
+#intro_text{
+    text-align: center 
+}
+
+.card-title-container{
+    margin: 10px 5px;
+    text-align: center;
+}
+
+#about_me{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn-container{
+    height: 30px;
+    box-shadow:3px 6px 0px;
+}
+
+button{
+    background-color:rgb(11, 67, 135);
+    color: #6ac332;
+    height: 30px;
+    border-radius: 0;
+    /*box-shadow: 0 8px 16px 0 rgb(0,0,0,0,0.6);*/
+}
+.btn{
+     text-decoration: none;
+}
+
+#projects{
+    /*digital stylying of container*/
+
+    /*how the content inside container is laid out*/
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-basis: 100px;/*change this*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    font-size: 1em;
+    background-color: #bce3d063;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 20px;;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35vh;
+}
+
+

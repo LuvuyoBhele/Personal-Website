@@ -57,13 +57,14 @@ footer {
     color:#1A0381;
     background-color: #D3F5E4;
     border-color: #B81028;
+    text-decoration: none;
+
 }
 
 
 .card-text{
     color: #D3F5E4;
 }
-
 
 /*this is for mobile devices*/
 @media screen and (max-width: 578px) {

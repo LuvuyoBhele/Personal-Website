@@ -83,7 +83,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 35vh;
+    height: 100vh;
 }
 
 

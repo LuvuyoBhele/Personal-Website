@@ -1,31 +1,29 @@
-body{
-    background-image:url(../Assets/images/public-domain-vectors-u74_mEsgkgo-unsplash.jpg) ;
-    background-size: cover;
-    background-position: center center;
+#body{
+    color: black;
 }
 
 p, ul, .section{
-    color: #003161;
+    color:#E5C95F;
 }
 
-.fixed-menu {
-  position: fixed  !important;
-  width: 25% !important;
-  height: 100% !important;
-  transition: all 0.3s ease-in-out !important;  /* Smooth interaction */
-  z-index: 1000;
-  }
+#mainContent{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
 
-.col-4.fixed-menu {
-  position: fixed !important;
-  top: 0 !important;
-  right: 20px !important;
-  width: 35% !important;
-  height: 100% !important;
-  background: inherit !important;
-  z-index: 1000 !important;
-  padding-top: 7px !important;
-  box-sizing: border-box !important;
-  overflow: auto !important;   /* prevents overflow */
-  
+#section-1{
+    background-color: #05339C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#section-2{
+    background-color: #1055C9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

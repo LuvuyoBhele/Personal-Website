@@ -1,0 +1,31 @@
+body{
+    background-image:url(../Assets/images/meagan-carsience-6iHgjDg9dew-unsplash.jpg) ;
+    background-size: cover;
+    background-position: center center;
+}
+
+p, ul, .section{
+    color: #FDEB9E;
+}
+
+.fixed-menu {
+  position: fixed  !important;
+  width: 25% !important;
+  height: 100% !important;
+  transition: all 0.3s ease-in-out !important;  /* Smooth interaction */
+  z-index: 1000;
+  }
+
+.col-4.fixed-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: 20px !important;
+  width: 35% !important;
+  height: 100% !important;
+  background: inherit !important;
+  z-index: 1000 !important;
+  padding-top: 7px !important;
+  box-sizing: border-box !important;
+  overflow: auto !important;   /* prevents overflow */
+  
+}

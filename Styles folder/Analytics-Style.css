@@ -1,7 +1,10 @@
 /*here we design for small cell phones*/ 
+body {
+    background-color:#003161;
+    }
 
 p, h1, h2{
-       color: #D3F5E4;
+       color: #FDEB9E;;
     }
 
 h1, h2{
@@ -9,17 +12,17 @@ h1, h2{
 }
 
 .articleBtn{
-    background-color: #D3F5E4;
-    border-color: #B81028;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: medium;
+    background-color:#003161;
+    color: #FDEB9E;
+    height: 30px;
+    border-radius: 30px;
 }
 
 
 
 @media screen and (max-width: 578px){
-    body {
-    background-color:#185737;
-    }
-    
     
     #project1{
         padding-bottom: 0%;
@@ -69,9 +72,6 @@ h1, h2{
 }
 
 @media screen and (min-width:577px) and (max-width:769px){
-     body {
-    background-color:#185737;
-    }
     
     #project1{
         padding-bottom: 0%;
@@ -120,10 +120,7 @@ h1, h2{
 }
 
 @media screen and (min-width:770px) {
-     body {
-    background-color:#185737;
-    }
-    
+
     #project1{
         padding-bottom: 0%;
         margin-bottom: 0%;

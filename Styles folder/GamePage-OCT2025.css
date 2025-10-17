@@ -78,8 +78,5 @@ p, ul, .section{
         margin-bottom: 0px;
     }
 
-    #section-2 .card-content{
-        position:relative;
-        bottom:11em;
-    }
+    
 }

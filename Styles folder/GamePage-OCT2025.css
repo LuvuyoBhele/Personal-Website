@@ -1,6 +1,4 @@
-#body{
-    color: black;
-}
+
 
 p, ul, .section{
     color:#E5C95F;
@@ -10,6 +8,13 @@ p, ul, .section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: black;
+    color: #E5C95F;
 }
 
 #mainContent{

@@ -41,6 +41,7 @@
   border: none !important;
   color: #E5C95F !important;
   text-align: center;
+  margin: 10px;
 }
 
 /* correct selectors for specific card variants */

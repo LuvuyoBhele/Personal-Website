@@ -1,4 +1,4 @@
-body{
+#body{
     background-color:  #05339C;
     color: #E5C95F;
 }
@@ -35,25 +35,29 @@ body{
     padding-left:1em;
 }
 
-.card{
-    width: 80%;
-    background-color: #031f60;
-    
+/* override Bootstrap .card background */
+.card {
+  background-color: #04297E !important; /* or use your color */
+  border: none !important;
+  color: #E5C95F !important;
+  text-align: center;
 }
+
+/* correct selectors for specific card variants */
 
 #cardContainer{
     display:grid;
-    grid-template-columns:repeat(2, minmax(50px,1fr));
+    grid-template-columns:repeat(2, minmax(50px,200px));
     grid-auto-rows: 1fr;
-    align-items: center;
-    justify-items: center;
+    align-items: center !important;
+    justify-items: center !important;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 10px;;
 }
 
-.card{
+.card card-1, .card card-2{
     padding:0 1em 0em 1em ;
     /*border: 1px solid;*/
     border-radius: 10px;
-    
+    color:#E5C95F;
 }

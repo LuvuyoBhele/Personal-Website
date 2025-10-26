@@ -4,8 +4,41 @@ body {
     }
 
 p, h1, h2{
-       color: #FDEB9E;;
+       color: #FDEB9E;
     }
+#heroSection{
+    background-image: url(../Assets/images/pexels-leish-5257779.jpg);
+    background-size: auto 100%;
+    background-position: center;
+    text-align: center;
+    height: 100vh;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#heroSection p{
+    color: #003161;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+/* outline/stroke effect for hero text - uses WebKit stroke and multiple shadows for cross-browser */
+#heroSection p {
+    /* keep existing fill color */
+    color: #003161;
+    /* thin stroke for supported browsers */
+    -webkit-text-stroke: 1.5px #FDEB9E;
+    /* fallback outline using text-shadow (creates a faux stroke) */
+    text-shadow:
+      2px 2px 0 #FDEB9E,
+      -2px 2px 0 #FDEB9E,
+      2px -2px 0 #FDEB9E,
+      -2px -2px 0 #FDEB9E,
+      0 2px 0 #FDEB9E,
+      0 -2px 0 #FDEB9E,
+      2px 0 0 #FDEB9E,
+      -2px 0 0 #FDEB9E;
+}
 
 h1, h2{
     margin-left: 1em;

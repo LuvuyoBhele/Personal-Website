@@ -15,11 +15,17 @@ p, h1, h2, li, h3{
     scroll-snap-type: x mandatory;
 }
 
-.image-container img {
-    max-height: 500px;
-    scroll-snap-align: center;
-    border-radius: 10px;
+/* make the projects carousel 40% of viewport height and make images fill it */
+.image-container.carousel-40vh, .image-container {
+    height: 40vh;
 }
+.image-container img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+
 
 #heroSection{
     display: flex;
@@ -58,6 +64,8 @@ p, h1, h2, li, h3{
       2px 0 0 #FDEB9E,
       -2px 0 0 #FDEB9E;
 }
+
+
 
 h1, h2{
     margin-left: 1em;

@@ -7,7 +7,6 @@
     <title>My Portfoilio</title>
 </head>
 <body>
-    
     <div id = "heroSection">
         <blockquote>
             <p>We learn by doing the puzzling work of putting pieces together.</p>
@@ -15,18 +14,280 @@
     </div>
 
     <div class="projectContainer project1">
-        <h2>Tracing the Cosmic Web: Unveiling the Universe's Hidden Structure</h2>
+        <h1>Tracing the Cosmic Web: Unveiling the Universe's Hidden Structure</h1>
+        <p>How simulations, Python pipelines, and Friends of Friends reveal filaments that hide the universe's missing baryons.</p>
+        <div class = "image-container">
+            <img id="2df" src="../Assets/images/Screenshot (75).png">
+            <img id="result 1" src="../Assets/images/pic5.png">
+            <img id="result 1" src="../Assets/images/pic4.png">
+        </div>
+        <p>Current cosmological models put the universe at roughly 85% dark energy, 10% dark matter, and 5% baryonic matter — the ordinary atoms that make up you, me, stars, and planets — yet ordinary atoms seem to disappear into thin, hidden strands that follow the universe's large-scale shape, as if its geometry is guiding where baryons hide. This article investigates the mystery of the missing baryons and shows how observations, simulations, and reproducible Python pipelines, including clustering methods like Friends-of-Friends, reconstruct the cosmic web's faint filaments to reveal where ordinary matter lurks, blending technical walkthroughs with personal reflection on why mapping the unseen matters.</p>
+        <h3 id="tldr-heading">TLDR</h3>
+        <ul>
+            <li>The missing baryons live in diffuse filamentary gas within the cosmic web; they are hard to detect directly but traceable through structure and simulations.</li>
+            <li>I demonstrate a reproducible pipeline using Python, mock catalogs, and Friends-of-Friends clustering to identify filaments from noisy data.</li>
+            <li><strong>Key results:</strong> side-by-side observation vs simulation maps, filament reconstructions, and diagnostics showing sensitivity to parameters.</li>
+            <li>Read the article for code snippets, implementation notes, validation tests, and reflective takeaways that connect data, design, and curiosity.</li>
+        </ul>
+
+        <section id="background">
+  <h2>🧠 Background & Problem Framing</h2>
+
+  <h3>🌌 How Structure Emerged</h3>
+  <p>
+    The universe began 13.8 billion years ago as a hot, nearly uniform plasma. Tiny fluctuations in density—visible today in the cosmic microwave background (CMB)—were seeded by dark matter. Over time, gravity amplified these fluctuations, forming the large-scale structure known as the <strong>cosmic web</strong>.
+  </p>
+
+  <h3>🕸️ What Is the Cosmic Web?</h3>
+  <ul>
+    <li>A vast network of galaxies, gas, and dark matter arranged in filaments, sheets, and voids</li>
+    <li>Dense regions like clusters and superclusters connected by elongated bridges of matter</li>
+    <li>Enormous voids with extremely low density</li>
+    <li>The largest gravitationally bound structure in the observable universe</li>
+  </ul>
+
+  <h3>💨 The Missing Baryon Problem</h3>
+  <ul>
+    <li>Only <strong>5%</strong> of the universe is baryonic matter (ΛCDM model)</li>
+    <li>Simulations suggest <strong>30–50%</strong> of it is hidden in a diffuse, warm-hot phase called the <strong>WHIM</strong> (Warm-Hot Intergalactic Medium)</li>
+    <li>This gas is difficult to detect due to low emission, foreground contamination, and absorption by the Milky Way</li>
+  </ul>
+
+  <h3>🔥 The Four Phases of the Intergalactic Medium (IGM)</h3>
+  <ol>
+    <li><strong>Diffuse gas</strong>: low density, low temperature</li>
+    <li><strong>Condensed gas</strong>: stars and cool galactic gas</li>
+    <li><strong>Warm-Hot (WHIM)</strong>: 10<sup>5</sup>–10<sup>7</sup> K</li>
+    <li><strong>Hot gas</strong>: found in galaxy clusters</li>
+  </ol>
+  <p>
+    As cosmic structure formed, shock heating transformed diffuse gas into WHIM—emitting in EUV and soft X-rays, but still elusive.
+  </p>
+
+  <h3>🔍 Detecting the WHIM</h3>
+  <ul>
+    <li>Soft X-ray background and autocorrelation functions</li>
+    <li>Absorption lines from ionized oxygen (O VII, O VI)</li>
+    <li>Emission lines from highly ionized species (O VIII)</li>
+    <li>Sunyaev-Zeldovich effect with galaxies</li>
+    <li>Morphology of AGN jets bent by ram pressure from the IGM</li>
+  </ul>
+
+  <h3>🌀 AGN Jets as Cosmic Probes</h3>
+  <ul>
+    <li>Bent jets are more common in dense environments</li>
+    <li>Jet bending correlates with IGM density and velocity</li>
+    <li>Galaxy group membership increases likelihood of bent jets</li>
+  </ul>
+  <p>
+    This makes <strong>AGN morphology</strong> a proxy for WHIM detection—and clustering algorithms like <strong>Friends-of-Friends</strong> a powerful tool for tracing filamentary environments.
+  </p>
+</section>
+
+<section id="methods">
+  <h2>🧪 Methods</h2>
+
+  <h3>🔦 Detecting the Invisible</h3>
+  <p>
+    Intergalactic gas is incredibly diffuse — up to 20 times less dense than the average baryonic matter in the universe. It emits no light of its own, making it invisible to direct observation. To detect it, we rely on how it affects light from distant galaxies and quasars.
+  </p>
+
+  <h3>🌈 Redshift as a Cosmic Ruler</h3>
+  <ul>
+    <li>
+      <strong>Relativistic Doppler effect:</strong>
+      <code>λ<sub>observed</sub> = λ<sub>rest</sub> × √[(1 + v<sub>r</sub>/c) / (1 - v<sub>r</sub>/c)]</code>
+    </li>
+    <li>
+      <strong>Redshift definition:</strong>
+      <code>z = (λ<sub>observed</sub> - λ<sub>rest</sub>) / λ<sub>rest</sub></code>
+    </li>
+    <li>
+      <strong>Hubble's Law:</strong>
+      <code>v = H<sub>0</sub> × d</code>, where <code>H<sub>0</sub> ≈ 70 km/s/Mpc</code>
+    </li>
+  </ul>
+  <p>
+    Redshift surveys like <strong>2dFGRS</strong> combine redshift and angular position data to reconstruct the 3D distribution of galaxies — revealing filaments, voids, and clusters.
+  </p>
+
+  <h3>☁️ How the IGM Leaves a Mark</h3>
+  <ul>
+    <li><strong>Absorption:</strong> photons are absorbed by hydrogen atoms</li>
+    <li><strong>Scattering:</strong> photons are deflected, reducing brightness</li>
+    <li><strong>Extinction:</strong> the combined effect of absorption and scattering</li>
+  </ul>
+  <p>
+    These effects imprint redshifted absorption lines on spectra, allowing us to resolve intergalactic clouds — the filaments of the cosmic web.
+  </p>
+
+  <h3>🧮 Preparation of Data</h3>
+
+  <h4>📡 Coordinate Conversion</h4>
+  <ul>
+    <li>RA and Dec values from Vizier are converted from hms/dms to degrees using <strong>Astropy</strong></li>
+    <li>RA values >12h are adjusted by subtracting 24h to maintain continuity across the celestial meridian</li>
+  </ul>
+
+  <h4>🚀 Velocity Corrections</h4>
+  <ol>
+    <li>
+      <strong>Solar Motion Correction:</strong> adjusts for the Sun's motion within the Local Group.
+      Galaxies with corrected velocities &lt;30 km/s are reassigned to 300 km/s to avoid singularities.
+      Denoted as <code>v<sub>s</sub></code>.
+    </li>
+    <li>
+      <strong>Virgocentric Flow Correction:</strong> accounts for the Local Group's infall toward the Virgo Cluster.
+      Assumes an infall velocity of 300 km/s. Denoted as <code>v<sub>v</sub></code>.
+    </li>
+  </ol>
+
+  <h4>🧪 Velocity Filtering</h4>
+  <ul>
+    <li>Only galaxies with corrected recessional velocities &lt;12,000 km/s are included</li>
+    <li>Final corrected velocity:
+      <code>v<sub>corrected</sub>(z) = v(z) - v<sub>v</sub> - v<sub>s</sub></code>
+    </li>
+  </ul>
+
+  <h3>🗺️ Visual Inspection & Boundary Extraction</h3>
+  <p>
+    After corrections, the dataset is plotted to inspect galaxy distributions and identify clusters. This helps define boundaries for clustering algorithms.
+  </p>
+  <ul>
+    <li><strong>RA range:</strong> 23h to 1h (Figure 6)</li>
+    <li><strong>Redshift range:</strong> 12,000 km/s to 24,000 km/s</li>
+    <li><strong>Cartesian coordinates:</strong>
+      <ul>
+        <li>x: 175-300 Mpc</li>
+        <li>y: -50 to 100 Mpc (Figure 7 shows -50 to 50 Mpc)</li>
+        <li>z: -140 to -90 Mpc (Figures 7 and 8)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>🧠 Data Analysis: Friends-of-Friends Algorithm</h3>
+  <p>
+    The <strong>Friends-of-Friends (FoF)</strong> algorithm identifies gravitationally bound structures using galaxy positions and redshifts.
+  </p>
+  <ol>
+    <li>
+      <strong>Galaxy Selection:</strong> galaxies are grouped by redshift slices:
+      <code>z<sub>n</sub> = z<sub>n−1</sub> + Δz</code>
+    </li>
+    <li>
+      <strong>Categorization:</strong> galaxies are classified as:
+      <ul>
+        <li><strong>Groups:</strong> ≥3 bound members</li>
+        <li><strong>Isolated groups:</strong> 1–2 loosely associated galaxies</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Group Formation:</strong> groups are merged if binding conditions are met
+    </li>
+  </ol>
+
+  <h4>🔗 Binding Conditions</h4>
+  <ul>
+    <li><strong>Distance:</strong> separation <code>D<sub>ij</sub></code> must be below threshold <code>D<sub>L</sub></code></li>
+    <li><strong>Velocity:</strong> relative velocity <code>V<sub>ij</sub></code> must be below threshold <code>V<sub>L</sub></code></li>
+  </ul>
+  <p>
+    Groups are built iteratively by comparing each galaxy to others and linking those that satisfy both conditions. This helps identify dense regions and filaments. The implementation is based on the extended FoF algorithm by <strong>Botzler et al. (2002)</strong>.
+  </p>
+</section>
+
+<section id="results">
+  <h2>📊 Results</h2>
+
+  <h3>🧭 Mapping the Supercluster Region</h3>
+  <p>
+    After applying all corrections and filters, the dataset was plotted to visualize galaxy distributions. This revealed a dense supercluster region with the following constraints:
+  </p>
+  <ul>
+    <li><strong>RA range:</strong> 23h to 1h</li>
+    <li><strong>Redshift range:</strong> 12,000 km/s to 24,000 km/s</li>
+    <li><strong>Cartesian bounds:</strong>
+      <ul>
+        <li>x: 175-300 Mpc</li>
+        <li>y: -50 to 100 Mpc</li>
+        <li>z: -140 to -90 Mpc</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Figures 6, 7, and 8 show clear filamentary structures and voids, confirming the presence of large-scale clustering.
+  </p>
+
+  <h3>🧠 FoF Algorithm Output</h3>
+  <ul>
+    <li><strong>Total galaxies classified:</strong> 2,104</li>
+    <li><strongTotal groups identified:</strong> 132
+      <ul>
+        <li>91 groups contain more than 3 galaxies</li>
+        <li>41 groups are lone or isolated (1–2 members)</li>
+      </ul>
+    </li>
+    <li><strong>Most common group size:</strong> 3 galaxies</li>
+    <li><strong>Largest group:</strong> 572 galaxies (only one such group)</li>
+  </ul>
+  <p>
+    Group size distributions are summarized in Table 2 and Table 3. The clustering reveals a mix of dense cores and peripheral associations.
+  </p>
+
+  <h3>🧱 Structural Features</h3>
+  <p>
+    Figures 11 and 13 reveal three distinct structural sections:
+  </p>
+  <ul>
+    <li>A vertical arrangement of groups dominated by the largest cluster</li>
+    <li>This structure acts as a divider between two separate group clusters</li>
+    <li>Some non-isolated groups are spatially distant from others, suggesting filament fragmentation or peripheral clustering</li>
+  </ul>
+
+  <h3>🌌 Supercluster Tracing</h3>
+  <ul>
+    <li>Figures 7-9 show the supercluster structure without group overlays — the darkest regions resemble the supercluster core</li>
+    <li>Figures 14-16 show how identified groups trace the supercluster's shape</li>
+    <li>This supports the hypothesis that galaxies are embedded within filaments</li>
+  </ul>
+  <p>
+    While some grouped galaxies lie outside the main structure, the overall distribution broadly follows the supercluster’s geometry — though not uniformly populated.
+  </p>
+
+  <h3>🔭 Projection Limitations</h3>
+  <p>
+    The <strong>XZ projection</strong> (Figures 8 and 14) lacks sufficient resolution for firm conclusions. However, other projections allow extrapolation of filamentary alignment and density gradients.
+  </p>
+</section>
+
+<section id="conclusion">
+  <h2>🧩 Conclusion</h2>
+  <p>
+    In this study, we used data from the <strong>2dF Galaxy Redshift Survey</strong> together with an iterative <strong>Friends-of-Friends (FoF)</strong> clustering method to map large-scale cosmic structures. We corrected raw right ascension, declination, and redshift for solar motion and the Virgocentric flow, then filtered by velocity. Finally, we used <strong>Astropy</strong> to convert spherical coordinates into Cartesian coordinates, giving us precise 3D positions for every galaxy.
+  </p>
+  <p>
+    The FoF algorithm identified <strong>132 galaxy groups</strong>: 91 contain more than three galaxies, while 41 are isolated systems. When we plotted those 91 richer groups in Cartesian space, they traced out the filamentary outline of a supercluster. This confirms that a supercluster is really a collection of smaller galaxy groups, in line with <strong>hierarchical-formation theory</strong>.
+  </p>
+  <p>
+    Our results also set the stage for tackling the <strong>Missing Baryon problem</strong>, which notes that a large fraction — about <strong>40%–50%</strong> of normal matter — is unaccounted for. <strong>Cen and Ostriker (2006, 1999)</strong> predict these “missing” baryons live in the <strong>warm-hot intergalactic medium (WHIM)</strong>, which is hard to observe directly.
+  </p>
+  <p>
+    Next, we’ll use FoF to pinpoint galaxy filaments, cross-match <strong>active galactic nuclei (AGN)</strong> in those filaments with radio catalogues, and study how the intergalactic medium shapes AGN morphology. From those changes, we can estimate the WHIM’s density and temperature. Finally, we’ll apply this method to different filaments across the cosmic web to find and study the missing baryons in the WHIM.
+  </p>
+</section>
+
         <div id = "cosmicWeb">
-            <img id= "cosmicWebImage" src="../Assets/LinkedIn post.jpg">
+            <!--<img id= "cosmicWebImage" src="../Assets/LinkedIn post.jpg">-->
             <div class = "captionContainer">
-                <p class = "caption">
+                <!--<p class = "caption">
                     caption: picture of the cosmic web
-                </p>
+                </p>-->
             </div>
         </div>
-        <p class = "articleDescription">
+       <!-- <p class = "articleDescription">
             This article explores the mystery of the universe's missing baryonic matter and how scientists trace it through the cosmic web-a vast network of filaments made of dark matter, gas, and galaxies. It highlights how computational tools like Python and the Friends-of-Friends algorithm can simulate these hidden structures, making the invisible visible. Blending scientific insight with personal reflection, the piece emphasizes the power of data and design to reveal meaning, inspire curiosity, and build a legacy of understanding across both cosmic and human scales.
-        </p>
+        </p>-->
         <button class="articleBtn"><!--<a href="https://github.com/LuvuyoBhele/Tracing-Filaments">-->Read Article<!--</a>--></button>
     </div>
 </body>

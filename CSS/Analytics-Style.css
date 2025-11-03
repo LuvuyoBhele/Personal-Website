@@ -89,6 +89,48 @@ h2{
     background-image: url(../Assets/images/LinkedIn\ post.jpg);
 }
 
+/* Make carousel arrow icons black and put them on a light circular button so they don't blend with images */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem !important;        /* larger circular button */
+  height: 3rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: #003161 !important; /* button background */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border: none !important;
+  z-index: 5 !important;
+}
+
+/* increase icon size and draw area so filled arrow looks thicker */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem !important; 
+  height: 2rem !important;
+  background-size: 140% 140% !important; /* enlarge glyph inside button */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: transparent !important;
+}
+
+/* left (prev) icon — orange fill */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFA500'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 1 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") !important;
+}
+
+/* right (next) icon — orange fill */
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFA500'%3E%3Cpath d='M4.646 14.354a.5.5 0 0 1 0-.708L9.293 9 4.646 4.354a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708 0z'/%3E%3C/svg%3E") !important;
+}
+
+/* keep buttons slightly inset from edges */
+.carousel-control-prev { left: 1rem !important; }
+.carousel-control-next { right: 1rem !important; }
+
 /*
 @media screen and (max-width: 578px){
     
@@ -238,4 +280,4 @@ h2{
     .articleDescription{
         margin-bottom: 10px;
     }
-}*/
+}

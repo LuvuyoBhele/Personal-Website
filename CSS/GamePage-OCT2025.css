@@ -73,9 +73,10 @@ h1{
 
 
 .card-image img {
+    display: block;
     max-height: 45vh;
     min-height: 35vh;
-    object-fit: fill;
+    object-fit: cover;
     padding-bottom: 0%;
     margin-bottom: 0px;
 }

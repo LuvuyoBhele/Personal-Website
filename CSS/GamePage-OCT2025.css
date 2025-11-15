@@ -2,6 +2,13 @@ p, ul, .section{
     color:#E5C95F;
 }
 
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+}
+
 h1{
     margin-top:0px;
 }

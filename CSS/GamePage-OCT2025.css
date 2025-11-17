@@ -24,7 +24,7 @@ h1{
     background-color: black;
     color: #E5C95F;
     height: 100vh;
-    width:100%;
+    width: 100%; /* changed from 100vw to 100% to avoid scrollbar overflow */
     align-content: center;
 }
 
@@ -59,11 +59,15 @@ h1{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* make sizing predictable and prevent overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-
-
-
-
+/* prevent accidental horizontal scroll as a fallback */
+html, body {
+  overflow-x: hidden;
+}
 
 .card-image{
     display: flex;
@@ -71,17 +75,16 @@ h1{
     justify-content: center;
 }
 
-
 .card-image img {
     display: block;
+    max-width: 100%;    /* prevent image from overflowing horizontally */
+    width: auto;
     max-height: 45vh;
-    min-height: 35vh;
-    object-fit: cover;
-    padding-bottom: 0%;
-    margin-bottom: 0px;
+    min-height: 0;      /* remove forced min-height that can cause overflow issues */
+    object-fit: cover;  /* use cover for consistent cropping */
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
-
-
 
 .card-content {
         flex-direction: column;

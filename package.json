@@ -1,0 +1,20 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "This is for the creation of a quiz game where the quiz master can see the questions, timer, and round",
+  "homepage": "https://github.com/LuvuyoBhele/Personal-Website#readme",
+  "bugs": {
+    "url": "https://github.com/LuvuyoBhele/Personal-Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuvuyoBhele/Personal-Website.git"
+  },
+  "license": "ISC",
+  "author": "luvuyo",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

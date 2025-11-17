@@ -65,9 +65,9 @@ h1{
 }
 
 /* prevent accidental horizontal scroll as a fallback */
-html, body {
+/*html, body {
   overflow-x: hidden;
-}
+}*/
 
 .card-image{
     display: flex;

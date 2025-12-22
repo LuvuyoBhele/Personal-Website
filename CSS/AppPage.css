@@ -62,3 +62,10 @@
     border-radius: 10px;
     color:#E5C95F;
 }
+
+.onHover{
+    background-color: red !important;
+    color: red !important;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}

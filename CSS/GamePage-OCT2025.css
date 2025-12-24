@@ -45,6 +45,45 @@ h1{
     flex-basis: 30vh;
 }
 
+@media screen and (min-width: 400px) {
+
+    .section-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        align-content:center;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .card-image {
+        flex-grow: 2;
+        width: max-content;
+        flex-basis: 30vh;
+        align-items: center;
+    }
+    
+     .card-image img{
+        aspect-ratio: cover;
+        width: 100%;
+     }
+
+    .card-content {
+        flex-grow: 3;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-basis: 30vh;
+        align-content: center;
+        
+    }
+
+}
+
+
+
+
+
+
 #section-1{
     background-color: #05339C;
     padding: 10px;

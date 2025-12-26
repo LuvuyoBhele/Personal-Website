@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/Analytics-Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>My Portfoilio</title>
 </head>
 <body>
     <div id = "heroSection">
         <blockquote>
-            <p>We learn by doing the puzzling work of putting pieces together.</p>
+            <p class="ubuntu-bold-italic">We learn by doing the puzzling work of putting pieces together.</p>
         </blockquote>    
     </div>
 
     <div class="projectContainer project1">
-        <h1>Tracing the Cosmic Web: Unveiling the Universe's Hidden Structure</h1>
-        <p>How simulations, Python pipelines, and Friends of Friends reveal filaments that hide the universe's missing baryons.</p>
+        <h1 class="ubuntu-bold-italic">Tracing the Cosmic Web: Unveiling the Universe's Hidden Structure</h1>
+        <p class='pt-sans-regular'>How simulations, Python pipelines, and Friends of Friends reveal filaments that hide the universe's missing baryons.</p>
 
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
@@ -31,7 +34,7 @@
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <p class='pt-sans-regular'>Some representative placeholder content for the first slide.</p>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -40,7 +43,7 @@
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <p class='pt-sans-regular'>Some representative placeholder content for the second slide.</p>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -49,7 +52,7 @@
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <p class='pt-sans-regular'>Some representative placeholder content for the third slide.</p>
                   </div>
                 </div>
             </div>
@@ -65,29 +68,29 @@
 
 
         </div>
-        <p>Current cosmological models put the universe at roughly 85% dark energy, 10% dark matter, and 5% baryonic matter — the ordinary atoms that make up you, me, stars, and planets — yet ordinary atoms seem to disappear into thin, hidden strands that follow the universe's large-scale shape, as if its geometry is guiding where baryons hide. This article investigates the mystery of the missing baryons and shows how observations, simulations, and reproducible Python pipelines, including clustering methods like Friends-of-Friends, reconstruct the cosmic web's faint filaments to reveal where ordinary matter lurks, blending technical walkthroughs with personal reflection on why mapping the unseen matters.</p>
+        <p class='pt-sans-regular'>Current cosmological models put the universe at roughly 85% dark energy, 10% dark matter, and 5% baryonic matter — the ordinary atoms that make up you, me, stars, and planets — yet ordinary atoms seem to disappear into thin, hidden strands that follow the universe's large-scale shape, as if its geometry is guiding where baryons hide. This article investigates the mystery of the missing baryons and shows how observations, simulations, and reproducible Python pipelines, including clustering methods like Friends-of-Friends, reconstruct the cosmic web's faint filaments to reveal where ordinary matter lurks, blending technical walkthroughs with personal reflection on why mapping the unseen matters.</p>
         <h3 id="tldr-heading">TLDR</h3>
         <ul>
-            <li>The missing baryons live in diffuse filamentary gas within the cosmic web; they are hard to detect directly but traceable through structure and simulations.</li>
-            <li>I demonstrate a reproducible pipeline using Python, mock catalogs, and Friends-of-Friends clustering to identify filaments from noisy data.</li>
-            <li><strong>Key results:</strong> side-by-side observation vs simulation maps, filament reconstructions, and diagnostics showing sensitivity to parameters.</li>
-            <li>Read the article for code snippets, implementation notes, validation tests, and reflective takeaways that connect data, design, and curiosity.</li>
+            <li class='pt-sans-regular'>The missing baryons live in diffuse filamentary gas within the cosmic web; they are hard to detect directly but traceable through structure and simulations.</li>
+            <li class='pt-sans-regular'>I demonstrate a reproducible pipeline using Python, mock catalogs, and Friends-of-Friends clustering to identify filaments from noisy data.</li>
+            <li class='pt-sans-regular'><strong>Key results:</strong> side-by-side observation vs simulation maps, filament reconstructions, and diagnostics showing sensitivity to parameters.</li>
+            <li class='pt-sans-regular'>Read the article for code snippets, implementation notes, validation tests, and reflective takeaways that connect data, design, and curiosity.</li>
         </ul>
 
         <section id="background">
   <h2>🧠 Background & Problem Framing</h2>
 
   <h3>🌌 How Structure Emerged</h3>
-  <p>
+  <p class='pt-sans-regular'>
     The universe began 13.8 billion years ago as a hot, nearly uniform plasma. Tiny fluctuations in density—visible today in the cosmic microwave background (CMB)—were seeded by dark matter. Over time, gravity amplified these fluctuations, forming the large-scale structure known as the <strong>cosmic web</strong>.
   </p>
 
   <h3>🕸️ What Is the Cosmic Web?</h3>
   <ul>
-    <li>A vast network of galaxies, gas, and dark matter arranged in filaments, sheets, and voids</li>
-    <li>Dense regions like clusters and superclusters connected by elongated bridges of matter</li>
-    <li>Enormous voids with extremely low density</li>
-    <li>The largest gravitationally bound structure in the observable universe</li>
+    <li class='pt-sans-regular'>A vast network of galaxies, gas, and dark matter arranged in filaments, sheets, and voids</li>
+    <li class='pt-sans-regular'>Dense regions like clusters and superclusters connected by elongated bridges of matter</li>
+    <li class='pt-sans-regular'>Enormous voids with extremely low density</li>
+    <li class='pt-sans-regular'>The largest gravitationally bound structure in the observable universe</li>
   </ul>
 
   <h3>💨 The Missing Baryon Problem</h3>
@@ -269,7 +272,7 @@
     <li><strongTotal groups identified:</strong> 132
       <ul>
         <li>91 groups contain more than 3 galaxies</li>
-        <li>41 groups are lone or isolated (1–2 members)</li>
+        <li>41 groups are lone or isolated (1-2 members)</li>
       </ul>
     </li>
     <li><strong>Most common group size:</strong> 3 galaxies</li>
@@ -317,7 +320,7 @@
     Our results also set the stage for tackling the <strong>Missing Baryon problem</strong>, which notes that a large fraction — about <strong>40%–50%</strong> of normal matter — is unaccounted for. <strong>Cen and Ostriker (2006, 1999)</strong> predict these “missing” baryons live in the <strong>warm-hot intergalactic medium (WHIM)</strong>, which is hard to observe directly.
   </p>
   <p>
-    Next, we’ll use FoF to pinpoint galaxy filaments, cross-match <strong>active galactic nuclei (AGN)</strong> in those filaments with radio catalogues, and study how the intergalactic medium shapes AGN morphology. From those changes, we can estimate the WHIM’s density and temperature. Finally, we’ll apply this method to different filaments across the cosmic web to find and study the missing baryons in the WHIM.
+    Next, we'll use FoF to pinpoint galaxy filaments, cross-match <strong>active galactic nuclei (AGN)</strong> in those filaments with radio catalogues, and study how the intergalactic medium shapes AGN morphology. From those changes, we can estimate the WHIM’s density and temperature. Finally, we’ll apply this method to different filaments across the cosmic web to find and study the missing baryons in the WHIM.
   </p>
 </section>
 

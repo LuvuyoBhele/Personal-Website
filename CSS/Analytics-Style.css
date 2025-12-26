@@ -1,3 +1,22 @@
+/* Ensure carousel caption is below the image and not overlapping */
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+}
+
+.carousel-caption {
+    position: static !important;
+    background: transparent !important;
+    color: #FDEB9E;
+    width: 100%;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: 0;
+}
 /*here we design for small cell phones*/ 
 body {
     background-color:#003161;
@@ -22,9 +41,13 @@ p, h1, h2, li, h3{
 .image-container img {
     height: 100%;
     width: auto;
-    object-fit: cover;
 }
 
+.d-block.w-100 {
+   object-fit: contain;
+   max-height: 70vh;
+    
+}
 
 
 #heroSection{
@@ -38,6 +61,8 @@ p, h1, h2, li, h3{
     height: 100vh;
     margin-bottom: 0px;
     border-radius: 10px;
+    background-repeat: no-repeat;
+    object-fit: fill;
 }
 
 #heroSection p{
@@ -87,7 +112,10 @@ h2{
 .projectContainer{
     margin:0%;
     background-image: url(../Assets/images/LinkedIn\ post.jpg);
+    padding-bottom: 3rem;
 }
+
+
 
 /* Make carousel arrow icons black and put them on a light circular button so they don't blend with images */
 .carousel-control-prev,
@@ -130,6 +158,10 @@ h2{
 /* keep buttons slightly inset from edges */
 .carousel-control-prev { left: 1rem !important; }
 .carousel-control-next { right: 1rem !important; }
+
+
+
+
 
 /*
 @media screen and (max-width: 578px){

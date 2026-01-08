@@ -1,5 +1,6 @@
 body {
     background-color: #003161;
+    margin: 100%;
 }
 
 p, li, h1, h2, h3, h4{
@@ -95,6 +96,9 @@ footer {
 main{
     display: grid;
     grid-template-rows: 100vh auto auto;
+    margin: 0%;
+    padding: 0% 0% 0% 0%;
+    width: 100vw;
 }
 
 

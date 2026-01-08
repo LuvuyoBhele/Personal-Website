@@ -112,3 +112,7 @@ main{
     background-position: left center;
     background-size: cover;
 }
+
+#aboutMeSection{
+    margin: 1rem 3rem;
+}

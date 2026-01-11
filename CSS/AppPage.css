@@ -1,5 +1,5 @@
 #body{
-    background-color:  #05339C;
+    background-color: #003161;
     color: #E5C95F;
 }
 
@@ -37,7 +37,7 @@
 
 /* override Bootstrap .card background */
 .card {
-  background-color: #04297E !important; /* or use your color */
+  background-color: #62728B !important; /* or use your color */
   border: none !important;
   color: #E5C95F !important;
   text-align: center;
@@ -48,7 +48,7 @@
 
 #cardContainer{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(100px,200px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
     align-items: center !important;
     justify-items: center !important;

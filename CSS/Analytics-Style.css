@@ -126,12 +126,12 @@ p, h1, h2, li, h3, h4{
 #heroSection{
     display: flex;
     flex-direction: column;
-    justify: ite 1032247890px;ms: flex-end;
     background-image: url(../Assets/images/pexels-leish-5257779.jpg);
-    background-size: auto 100%;
+    background-size:cover;
     background-position: center;
     text-align: center;
     height: 100vh;
+    width: 100vw;
     margin-bottom: 0px;
     border-radius: 10px;
     background-repeat: no-repeat;
@@ -143,6 +143,7 @@ p, h1, h2, li, h3, h4{
     font-size: 2em;
     font-weight: bolder;
     text-align: right;
+    margin-right: 1em;
 }
 
 /* outline/stroke effect for hero text - uses WebKit stroke and multiple shadows for cross-browser */

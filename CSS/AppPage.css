@@ -48,16 +48,18 @@
 
 #cardContainer{
     display:grid;
-    grid-template-columns:repeat(2, minmax(50px,200px));
+    grid-template-columns:repeat(auto-fit, minmax(100px,200px));
     grid-auto-rows: 1fr;
     align-items: center !important;
     justify-items: center !important;
-    gap: 10px;
-    margin-top: 10px;;
+    justify-content: center !important;
+    gap: 5px;
+    margin-top: 10px;
+
 }
 
-.card card-1, .card card-2{
-    padding:0 1em 0em 1em ;
+.card {
+    padding:0 0.5em 0em 0.5em ;
     /*border: 1px solid;*/
     border-radius: 10px;
     color:#E5C95F;
@@ -67,4 +69,23 @@
     color: red !important;
     transform: scale(1.05);
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+#card-4{
+    order: 0;
+}
+#card-3{
+    order: 1;
+}
+#card-2{
+    order: 2;
+}
+#card-1{
+    order: 3;
+}
+
+#AppContents{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }

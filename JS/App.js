@@ -26,3 +26,11 @@ document.getElementById('card-1').addEventListener('click', function() {
 document.getElementById('card-2').addEventListener('click', function() {
   window.location.href = 'https://github.com/LuvuyoBhele/Breaking-an-encryption';
 });
+
+document.getElementById('card-3').addEventListener('click', function() {
+  window.location.href = 'https://github.com/LuvuyoBhele/Operation-Black-Jack';
+});
+
+document.getElementById('card-4').addEventListener('click', function() {
+  window.location.href = 'https://github.com/LuvuyoBhele/Quiz-Master';
+});

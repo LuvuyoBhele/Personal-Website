@@ -11,7 +11,7 @@ p, li, h1, h2, h3, h4{
     color: #FDEB9E;
     font-size: 5 em;
     font-weight: large;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.5em;
 }
 
 
@@ -21,7 +21,7 @@ p, li, h1, h2, h3, h4{
     font-weight: lighter;
     font-style: italic;
     word-wrap: wrap;
-    word-spacing: 0.5em;
+   /* word-spacing: 0em;*/
     text-shadow: 2px 2px rgb(11, 67, 135);
 }
 
